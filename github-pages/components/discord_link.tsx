@@ -10,7 +10,7 @@ export const DiscordLink = (
   props: React.PropsWithChildren<DiscordLinkProps>
 ) => (
   <Link
-    /* href="https://discord.gg/levelcrush" */ href="https://levelcrush.gg/discord"
+    /* href="https://discord.gg/levelcrush" */ href="https://discord.gg/kwgrVT2"
     target="_blank"
     className={
       'block max-w-[12rem] text-center text-white bg-blue-600 hover:bg-blue-900 hover:cursor-pointer rounded px-4 py-2  mx-0 my-8 ' +

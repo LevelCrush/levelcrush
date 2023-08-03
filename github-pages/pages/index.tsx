@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetStaticProps } from 'next';
 import BlockList from '../components/block_list';
 import DiscordEventList, { DiscordEvent } from '../components/event_list';
+import DiscordLink from '../components/discord_link';
 
 interface HomeProps {
   youtubeID: string;
@@ -47,6 +48,7 @@ async function getDiscordServerEvents() {
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const youtubeID = process.env['YOUTUBE_PLAYLIST_ID_HOME'] || '';
   const events = await getDiscordServerEvents();
+  //const events = [] as DiscordEvent[];
   console.log('The below are the server events', events);
 
   return {
@@ -61,16 +63,8 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 export const HomePage = (props: HomeProps) => (
   <div className="flex min-h-screen flex-wrap">
     {/* Left Column */}
-    <div
-      className="flex-auto w-full lg:w-2/4 min-h-screen flex flex-col px-4 items-center overflow-hidden max-w-[60rem] flex-wrap"
-      style={{
-        backgroundImage:
-          "linear-gradient(to top,rgba(14,28,28,.85), rgba(14,14,28,.85)), url('./hero.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center left',
-      }}
-    >
-      <div className="flex-1 flex flex-col">
+    <div className="flex-auto w-full lg:w-2/4 min-h-screen flex flex-col px-4 items-center self-start overflow-hidden lg:max-w-[60rem] flex-wrap">
+      <div className="flex-1 flex flex-col lg:min-h-[50vh]  xl:min-h-[33.75rem]">
         <H1 className="flex-start  self-start basis-auto inline-block">
           Level Crush
         </H1>
@@ -96,9 +90,9 @@ export const HomePage = (props: HomeProps) => (
           </div>
           <div className="clear-both"></div>
         </H2>
-      </div>
-      <div className="flex-1 w-full">
-        <H3>Community Events</H3>
+        <DiscordLink className="" />
+        <H3 className=" mt-32">Community Events</H3>
+
         <DiscordEventList
           className="flex-start self-start w-full relative top-0 left-0 my-8"
           events={props.events}
@@ -107,12 +101,12 @@ export const HomePage = (props: HomeProps) => (
       </div>
     </div>
     {/* Right Column */}
-    <div className="flex-auto w-full lg:w-2/4 min-h-screen flex flex-col">
+    <div className="flex-auto self-start w-full lg:w-2/4 min-h-screen flex flex-col lg:sticky top-0">
       <iframe
         id="youtubePlayer"
         width="1920"
         height="540"
-        className="w-full h-[13rem]md:h-[28rem] lg:h-[50vh]  xl:min-h-[33.75rem] flex-shrink-0 flex-grow-0 basis-auto"
+        className="w-full h-[13rem] md:h-[28rem] lg:h-[50vh]  xl:min-h-[33.75rem] flex-shrink-0 flex-grow-0 basis-auto"
         src={
           'https://www.youtube-nocookie.com/embed/' +
           encodeURIComponent(props.youtubeID) +

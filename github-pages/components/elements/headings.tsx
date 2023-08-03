@@ -12,7 +12,7 @@ export const H1 = (props: React.PropsWithChildren<HeadingProps>) => (
     className={
       (props.minimalCSS
         ? ''
-        : ' align-middle text-yellow-400 text-6xl lg:text-7xl xl:text-9xl font-headline font-bold uppercase tracking-widest ') +
+        : ' align-middle text-yellow-400 text-7xl  xl:text-8xl font-headline font-bold uppercase tracking-widest ') +
       (props.className || '')
     }
   >
@@ -26,7 +26,7 @@ export const H2 = (props: React.PropsWithChildren<HeadingProps>) => (
     className={
       (props.minimalCSS
         ? ''
-        : ' text-xl lg:text-3xl xl:text-4xl text-white font-headline font-bold  tracking-widest ') +
+        : ' text-2xl lg:text-3xl xl:text-4xl text-white font-headline font-bold  tracking-widest ') +
       (props.className || '')
     }
   >
@@ -40,7 +40,7 @@ export const H3 = (props: React.PropsWithChildren<HeadingProps>) => (
     className={
       (props.minimalCSS
         ? ''
-        : ' text-xl md:text-2xl lg:text-3xl font-sans font-bold uppercase mb-4 ') +
+        : ' text-2xl lg:text-3xl font-sans font-bold uppercase mb-4 ') +
       (props.className || '')
     }
   >

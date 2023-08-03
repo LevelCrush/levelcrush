@@ -36,13 +36,20 @@
   }
 
   .dark body {
-    @apply bg-gradient-to-t;
-    @apply bg-slate-900;
-    @apply from-black;
-    @apply to-slate-800;
     @apply text-white;
+    @apply bg-slate-900;
     @apply transition-all;
     @apply duration-300;
+    background-image: linear-gradient(
+        to top,
+        rgba(14, 28, 28, 0.85),
+        rgba(14, 14, 28, 0.85)
+      ),
+      url('/hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
   }
 
   button.theme-toggle {

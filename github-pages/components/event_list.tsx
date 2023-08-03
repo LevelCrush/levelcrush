@@ -17,9 +17,12 @@ export interface DiscordEvent {
   image?: string;
 }
 
+type DiscordMinimumEvent = Partial<DiscordEvent> &
+  Pick<DiscordEvent, 'id' | 'name'>;
+
 export interface DiscordEventListProps {
   id: string;
-  events: DiscordEvent[];
+  events: DiscordMinimumEvent[];
   className?: string;
 }
 
@@ -39,37 +42,46 @@ export const DiscordEventList = (props: DiscordEventListProps) => {
 
     // loop through each discord event and parse to local time
     props.events.forEach((event) => {
-      const date = new Date(event.scheduled_start_time);
-      const year = date.getFullYear();
-      const month = date.getMonth() + 1;
-      const day = date.getDate();
+      if (event.scheduled_start_time) {
+        const date = new Date(event.scheduled_start_time);
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
 
-      const event_date =
-        month.toString().padStart(2, '0') +
-        '/' +
-        day.toString().padStart(2, '0') +
-        '/' +
-        year +
-        ' ' +
-        date.toLocaleTimeString();
-      timeMap[event.id] = event_date;
+        const event_date =
+          month.toString().padStart(2, '0') +
+          '/' +
+          day.toString().padStart(2, '0') +
+          '/' +
+          year +
+          ' ' +
+          date.toLocaleTimeString();
+        timeMap[event.id] = event_date;
+      }
     });
 
     setEventTimes(timeMap);
   }, [props.events]);
+
+  if (props.events.length === 0) {
+    props.events.push({
+      id: '-1',
+      name: 'No Scheduled Events',
+    });
+  }
 
   return (
     <div className={props.className || ''}>
       {props.events.map((event, eventIndex) => (
         <div
           className={
-            'flex w-full px-4 py-4 my-8 ' +
+            'flex w-full px-4 py-2 mb-8 ' +
             EVENT_STYLES[eventIndex % EVENT_STYLES.length]
           }
           key={props.id + '_event_' + eventIndex}
         >
-          <h4 className="text-2xl flex-1 justify-self-start">{event.name}</h4>
-          <span className="text-xl flex 1 justify-self-end text-right">
+          <h4 className="text-xl flex-1 justify-self-start">{event.name}</h4>
+          <span className="text-lg flex 1 justify-self-end text-right">
             {typeof eventTimes[event.id] !== 'undefined'
               ? eventTimes[event.id]
               : ''}
