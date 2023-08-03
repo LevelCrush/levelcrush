@@ -5,18 +5,54 @@ import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetStaticProps } from 'next';
 import BlockList from '../components/block_list';
+import DiscordEventList, { DiscordEvent } from '../components/event_list';
 
 interface HomeProps {
   youtubeID: string;
-  events: any[];
+  events: DiscordEvent[];
   blocks: any[];
 }
 
+/**
+ * Calls the Discord Api and fetches the server events
+ *
+ * @returns An array of DiscordEvent
+ */
+async function getDiscordServerEvents() {
+  const targetServer = process.env['DISCORD_TARGET_SERVER'] || '';
+  const discordBotToken = process.env['DISCORD_BOT_TOKEN'] || '';
+  const endpoint =
+    'https://discord.com/api/v10/guilds/' +
+    encodeURIComponent(targetServer) +
+    '/scheduled-events';
+
+  // todo: the below code should be at some point tweaked to handle errors
+  const apiRequest = await fetch(endpoint, {
+    method: 'GET',
+    headers: {
+      Authorization: 'Bot ' + discordBotToken,
+    },
+    next: {
+      revalidate: 300,
+    },
+  });
+
+  if (apiRequest.ok) {
+    const response = (await apiRequest.json()) as DiscordEvent[];
+    return response;
+  }
+  return [];
+}
+
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const youtubeID = process.env['YOUTUBE_PLAYLIST_ID_HOME'] || '';
+  const events = await getDiscordServerEvents();
+  console.log('The below are the server events', events);
+
   return {
     props: {
-      youtubeID: '5FNd-W7iEAU',
-      events: [],
+      youtubeID,
+      events,
       blocks: [],
     },
   };
@@ -26,7 +62,7 @@ export const HomePage = (props: HomeProps) => (
   <div className="flex min-h-screen flex-wrap">
     {/* Left Column */}
     <div
-      className="flex-auto w-full lg:w-2/4 min-h-screen flex px-4 justify-center overflow-hidden max-w-[60rem]"
+      className="flex-auto w-full lg:w-2/4 min-h-screen flex px-4 justify-center overflow-hidden max-w-[60rem] flex-wrap"
       style={{
         backgroundImage:
           "linear-gradient(to top,rgba(14,28,28,.85), rgba(14,14,28,.85)), url('./hero.jpg')",
@@ -60,6 +96,11 @@ export const HomePage = (props: HomeProps) => (
           </div>
           <div className="clear-both"></div>
         </H2>
+        <DiscordEventList
+          className="flex-start self-start w-full relative top-0 left-0 my-8"
+          events={props.events}
+          id="discordEvents"
+        />
       </div>
     </div>
     {/* Right Column */}
