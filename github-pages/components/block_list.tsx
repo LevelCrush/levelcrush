@@ -18,7 +18,7 @@ export const BlockList = (props: BlockListProps) => (
     {props.items.map((item, itemIndex) => (
       <div
         title={item.caption}
-        className="flex-1 basis-2/4 flex justify-center items-center"
+        className="flex-1 basis-2/4 flex justify-center items-center  min-h-[12.5rem]"
         key={props.id + '_' + itemIndex}
         style={{
           backgroundImage:

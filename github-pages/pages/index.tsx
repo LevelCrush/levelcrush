@@ -26,7 +26,7 @@ export const HomePage = (props: HomeProps) => (
   <div className="flex min-h-screen flex-wrap">
     {/* Left Column */}
     <div
-      className="flex-auto w-full md:w-2/4 min-h-screen flex px-4 justify-center overflow-hidden max-w-[60rem]"
+      className="flex-auto w-full lg:w-2/4 min-h-screen flex px-4 justify-center overflow-hidden max-w-[60rem]"
       style={{
         backgroundImage:
           "linear-gradient(to top,rgba(14,28,28,.85), rgba(14,14,28,.85)), url('./hero.jpg')",
@@ -63,12 +63,12 @@ export const HomePage = (props: HomeProps) => (
       </div>
     </div>
     {/* Right Column */}
-    <div className="flex-auto w-full md:w-2/4 min-h-screen flex flex-col">
+    <div className="flex-auto w-full lg:w-2/4 min-h-screen flex flex-col">
       <iframe
         id="youtubePlayer"
         width="1920"
         height="540"
-        className="w-full lg:h-[50vh]  xl:min-h-[33.75rem] flex-shrink-0 flex-grow-0 basis-auto"
+        className="w-full h-[13rem]md:h-[28rem] lg:h-[50vh]  xl:min-h-[33.75rem] flex-shrink-0 flex-grow-0 basis-auto"
         src={
           'https://www.youtube-nocookie.com/embed/' +
           encodeURIComponent(props.youtubeID) +
@@ -86,22 +86,22 @@ export const HomePage = (props: HomeProps) => (
           {
             text: 'Destiny 2',
             caption: 'Destiny 2 Clans/Tools',
-            url_background: '',
+            url_background: '/covers/destiny2.jpg',
           },
           {
             text: 'Diablo 4',
             caption: 'Diablo 4 Clan/Tools',
-            url_background: '',
+            url_background: '/covers/diablo.jpg',
           },
           {
             text: 'Minecraft',
             caption: 'Minecraft Server Information',
-            url_background: '',
+            url_background: '/covers/minecraft.jpg',
           },
           {
             text: 'Satisfactory',
             caption: 'Satisfactory Server Information',
-            url_background: '',
+            url_background: '/covers/satisfactory.jpg',
           },
         ]}
         id={'priorityBlockList'}

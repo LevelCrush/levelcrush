@@ -40,7 +40,7 @@ export const H3 = (props: React.PropsWithChildren<HeadingProps>) => (
     className={
       (props.minimalCSS
         ? ''
-        : ' text-3xl font-sans font-bold uppercase mb-4 ') +
+        : ' text-xl md:text-2xl lg:text-3xl font-sans font-bold uppercase mb-4 ') +
       (props.className || '')
     }
   >
