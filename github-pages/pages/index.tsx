@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
-import { H1, H2 } from '../components/elements/headings';
+import { H1, H2, H3 } from '../components/elements/headings';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetStaticProps } from 'next';
@@ -62,7 +62,7 @@ export const HomePage = (props: HomeProps) => (
   <div className="flex min-h-screen flex-wrap">
     {/* Left Column */}
     <div
-      className="flex-auto w-full lg:w-2/4 min-h-screen flex px-4 justify-center overflow-hidden max-w-[60rem] flex-wrap"
+      className="flex-auto w-full lg:w-2/4 min-h-screen flex flex-col px-4 items-center overflow-hidden max-w-[60rem] flex-wrap"
       style={{
         backgroundImage:
           "linear-gradient(to top,rgba(14,28,28,.85), rgba(14,14,28,.85)), url('./hero.jpg')",
@@ -70,7 +70,7 @@ export const HomePage = (props: HomeProps) => (
         backgroundPosition: 'center left',
       }}
     >
-      <div className="flex flex-col">
+      <div className="flex-1 flex flex-col">
         <H1 className="flex-start  self-start basis-auto inline-block">
           Level Crush
         </H1>
@@ -96,6 +96,9 @@ export const HomePage = (props: HomeProps) => (
           </div>
           <div className="clear-both"></div>
         </H2>
+      </div>
+      <div className="flex-1 w-full">
+        <H3>Community Events</H3>
         <DiscordEventList
           className="flex-start self-start w-full relative top-0 left-0 my-8"
           events={props.events}
