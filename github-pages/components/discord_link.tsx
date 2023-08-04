@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 export interface DiscordLinkProps {
   linkText?: string;
@@ -17,6 +19,7 @@ export const DiscordLink = (
       (props.className || '')
     }
   >
+    <FontAwesomeIcon className="mr-2" icon={faDiscord} />
     {props.linkText || 'Join us on Discord'}
     {props.children}
   </Link>
