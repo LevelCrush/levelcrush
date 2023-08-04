@@ -92,9 +92,8 @@ export const HomePage = (props: HomeProps) => (
         </H2>
         <DiscordLink className="" />
         <H3 className=" mt-32">Community Events</H3>
-
         <DiscordEventList
-          className="flex-start self-start w-full relative top-0 left-0 my-8 md:max-w-[30rem]"
+          className="flex-start self-start w-full relative top-0 left-0 my-8 max-w-[34rem]"
           events={props.events}
           id="discordEvents"
         />
