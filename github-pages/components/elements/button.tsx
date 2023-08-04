@@ -26,7 +26,7 @@ export const Button = (props: ButtonProps) => (
     {...props}
     type="button"
     className={
-      'block w-full px-4 py-2 rounded transition-all ' +
+      'block w-full px-4 py-2 rounded transition-all duration-300 ease-in-out ' +
       (() => {
         switch (props.intention) {
           case 'normal':

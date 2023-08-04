@@ -1,5 +1,6 @@
 import React from 'react';
 import { H3 } from './elements/headings';
+import Button from './elements/button';
 
 export interface BlockListItem {
   text: string;
@@ -18,18 +19,23 @@ export const BlockList = (props: BlockListProps) => (
     {props.items.map((item, itemIndex) => (
       <div
         title={item.caption}
-        className="flex-1 basis-2/4 flex justify-center items-center  min-h-[12.5rem]"
+        className="relative top-0 group flex-1 basis-2/4 flex justify-center items-center  min-h-[12.5rem] block-list-item text-center flex-wrap"
         key={props.id + '_' + itemIndex}
-        style={{
-          backgroundImage:
-            "linear-gradient(to top,rgba(14,28,28,.85), rgba(14,14,28,.85)), url('" +
-            item.url_background +
-            "')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-        }}
+        style={
+          {
+            '--background': "url('" + (item.url_background || '') + "')",
+          } as React.CSSProperties
+        }
       >
-        <H3>{item.text}</H3>
+        <H3 className=" z-10 basis-full lg:group-hover:opacity-0 opacity:100  ease-in-out duration-300 ">
+          {item.text}
+        </H3>
+        <Button
+          className=" z-10 absolute max-w-[10rem] lg:group-hover:opacity-100 opacity-100 lg:opacity-0 bottom-8 md:bottom-12  lg:bottom-auto"
+          intention={'normal'}
+        >
+          Learn More
+        </Button>
       </div>
     ))}
   </div>
