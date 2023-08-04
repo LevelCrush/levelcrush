@@ -7,7 +7,6 @@ import type { AppProps } from 'next/app';
 import smoothScroll from 'smoothscroll-polyfill';
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import SEO from '../next-seo.config';
 import NextNProgress from 'nextjs-progressbar';
 import { useRouter } from 'next/router';
 

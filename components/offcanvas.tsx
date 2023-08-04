@@ -68,8 +68,6 @@ export const OffCanvasToggle = (props: OffCanvasToggleProps) => (
  */
 export const OffCanvas = (props: React.PropsWithChildren<OffCanvasProps>) => {
   const [showing, setShowing] = useState(false);
-  const [isMember, setIsMember] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
   const [routes, setRoutes] = useState(props.routes || Routes);
 
   const eventCanvasToggle = () => {
@@ -105,7 +103,6 @@ export const OffCanvas = (props: React.PropsWithChildren<OffCanvasProps>) => {
     <div
       className="offcanvas relative top-0 min-h-screen h-auto"
       data-showing={showing ? '1' : '0'}
-      data-is-member={isMember ? '1' : '0'}
     >
       <nav
         data-offcanvas="main"
