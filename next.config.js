@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
-  basePath: '/',
+  basePath: '',
   reactStrictMode: true,
   images: {
     domains: ['http.cat'],
