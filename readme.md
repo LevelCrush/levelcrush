@@ -1,41 +1,34 @@
-# Level Crush
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This readme will only provide a brief overview/goal/index of everything found here and link to other related projects.
+## Getting Started
 
-![Discord](<https://img.shields.io/discord/303862208419594240?logo=discord&logoColor=rgb(255%2C255%2C255)&link=https%3A%2F%2Fdiscord.gg%2Flevelcrush>)
+First, run the development server:
 
-[Join us on Discord](https://discord.gg/levelcrush)
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-## Overview
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This is an excuse to just learn new technologies/ideas/concepts and get feedback with real users who actually use these services. As such, this is a "acceptable" place to make mistakes and try new things. The original code in this repository started in early 2023 and was used as an excuse to just learn the Rust programming language. Many items were just ported over from Typescript versions that were developed over the last two years and then gradually refactored as my understanding of the language of Rust improved.
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-So this repository is an experimental place. Not everything will stick, code is absolutely not perfect,not everything needs to make sense and its ok to reinvent the wheel for the sake of "self education" so long as it doesn't compromise/violate a user. Self Education, Experimention and Community impact/utility is the name of the game for this repository. Moving forward, this repository will do its best to store an active state of all new developments. Older developments may exist on their own repositories unless there is a clear benefit to moving it here.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-## Goals
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-1. Develop community integrations that improve either our user or admin experiences in the games we engage with or the community we engage with.
-2. Educate oneself on concepts/toolings where appropriate.
-3. Make many mistakes
-4. Compromise and ship working features, rather then perfection
+## Learn More
 
-## Contributing
+To learn more about Next.js, take a look at the following resources:
 
-We welcome all contributions. Feel free to open a [Github Discussion Post](https://github.com/LevelCrush/levelcrush/discussions) or raise any [Github Issues](https://github.com/LevelCrush/levelcrush/issues).
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-At the moment there are no contribution guideliness (yet) or license for the code (yet). Do as you wish or what you feel is most appropriate for the community.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Index
+## Deploy on Vercel
 
-1. Technical Readme - [View](./technical.md)
-2. Tagbind Repository - [View](https://github.com/LevelCrush/TagBind)
-3. Satisfactory Saves - [View](https://github.com/LevelCrush/satisfactory)
-4. levelcrush.com (Archived) (Repository) - [View](https://github.com/LevelCrush/levelcrush.com)
-5. api.levelcrush.com (Archived) (Repository) - [View](https://github.com/LevelCrush/api.levelcrush.com)
-6. login.levelcrush.com (Archived) (Repository) - [View](https://github.com/LevelCrush/login.levelcrush.com)
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Other Bots used in our Discord
-
-1. Music Man - [View](https://github.com/austinharms/MusicMan)
-2. Lilith - [View](https://github.com/lilith-discord-bot/lilith)
-3. Charlemagne - [View](https://warmind.io/)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
