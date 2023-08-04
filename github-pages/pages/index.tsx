@@ -65,17 +65,17 @@ export const HomePage = (props: HomeProps) => (
     {/* Left Column */}
     <div className="flex-auto w-full lg:w-2/4 min-h-screen flex flex-col px-4 items-center self-start overflow-hidden lg:max-w-[60rem] flex-wrap">
       <div className="flex-1 flex flex-col lg:min-h-[50vh]  xl:min-h-[33.75rem]">
-        <H1 className="flex-start  self-start basis-auto inline-block">
+        <H1 className="flex-start  self-start basis-auto inline-block mt-8">
           Level Crush
         </H1>
-        <H2 className="flex-start  self-start w-full relative top-0 left-0">
-          <span className="float-left relative left-2">We just game.</span>
+        <H2 className="flex-start  self-start w-full relative top-0 left-0 mt-2">
+          <span className="float-left relative">We just game.</span>
           <div className="inline-block float-right">
             <a
               href="https://discord.gg/kwgrVT2"
               target="_blank"
               title="Join us on Discord!"
-              className="text-white opacity-70 hover:opacity-100 mr-12"
+              className="text-white opacity-70 hover:opacity-100 mr-4 lg:mr-12"
             >
               <FontAwesomeIcon icon={faDiscord} />
             </a>
@@ -83,7 +83,7 @@ export const HomePage = (props: HomeProps) => (
               href="https://github.com/levelcrush"
               title="Check out our github repositories"
               target="_blank"
-              className="text-white opacity-70 hover:opacity-100 relative right-4"
+              className="text-white opacity-70 hover:opacity-100 relative"
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
@@ -94,7 +94,7 @@ export const HomePage = (props: HomeProps) => (
         <H3 className=" mt-32">Community Events</H3>
 
         <DiscordEventList
-          className="flex-start self-start w-full relative top-0 left-0 my-8"
+          className="flex-start self-start w-full relative top-0 left-0 my-8 md:max-w-[30rem]"
           events={props.events}
           id="discordEvents"
         />
