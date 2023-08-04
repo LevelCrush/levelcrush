@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
+  basePath: '/',
   reactStrictMode: true,
   images: {
-    domains: ['assets.levelcrush.com', 'assets.levelcrush.local', 'http.cat'],
+    domains: ['http.cat'],
   },
   optimizeFonts: false,
   async redirects() {
