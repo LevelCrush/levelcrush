@@ -85,6 +85,7 @@ export const DiscordEventList = (props: DiscordEventListProps) => {
               }
             >
               <img
+                alt={event.name + ' cover image'}
                 className="object-cover w-full h-full"
                 src={
                   'https://cdn.discordapp.com/guild-events/' +
