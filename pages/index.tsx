@@ -53,8 +53,6 @@ async function getDiscordServerEvents() {
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const youtubeID = YouTubeConfig.playlistIDHome;
   const events = await getDiscordServerEvents();
-  //const events = [] as DiscordEvent[];
-  console.log('The below are the server events', events);
 
   return {
     props: {
@@ -73,7 +71,7 @@ export const HomePage = (props: HomeProps) => (
         {/* Left Column */}
         <div className="relative top-0 flex-auto w-full lg:w-2/4 lg:min-h-screen items-center self-start overflow-hidden lg:max-w-[60rem] flex-wrap">
           <DiscordEventList
-            className="px-4 flex-start self-start w-full relative top-0 left-0 my-8 "
+            className="px-4 flex-start self-start w-full relative top-0 left-0 mt-0"
             events={props.events}
             id="discordEvents"
           />
@@ -84,7 +82,7 @@ export const HomePage = (props: HomeProps) => (
             id="youtubePlayer"
             width="1920"
             height="540"
-            className="border-l-[1px] border-l-white border-opacity-20 w-full h-[13rem] md:h-[28rem] lg:h-[40vh] flex-shrink-0 flex-grow-0 basis-auto"
+            className="border-l-[1px] border-l-white border-b-[1px] border-b-white border-r-white border-r-[1px] border-opacity-20 w-full h-[13rem] md:h-[28rem] lg:h-[40vh] flex-shrink-0 flex-grow-0 basis-auto"
             src={
               'https://www.youtube-nocookie.com/embed/' +
               encodeURIComponent(props.youtubeID) +
@@ -97,7 +95,7 @@ export const HomePage = (props: HomeProps) => (
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           ></iframe>
           <BlockList
-            className="flex-1 border-b-[1px] border-b-white border-opacity-20 "
+            className="flex-1"
             items={[
               {
                 text: 'Destiny 2',
