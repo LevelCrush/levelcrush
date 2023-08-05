@@ -20,7 +20,7 @@ export const BlockList = (props: BlockListProps) => {
       {props.items.map((item, itemIndex) => (
         <div
           title={item.caption}
-          className=" relative top-0 group flex-1 basis-2/4 flex justify-center items-center  min-h-[12.5rem] block-list-item text-center flex-wrap overflow-hidden"
+          className=" block-list-item border-l-[1px] border-l-white border-r-[1px] border-r-white  border-b-[1px] border-b-white border-opacity-20 relative top-0 group flex-1 basis-2/4 flex justify-center items-center  min-h-[12rem] text-center flex-wrap overflow-hidden"
           key={props.id + '_' + itemIndex}
         >
           {item.url_background ? (
