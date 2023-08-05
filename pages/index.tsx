@@ -66,7 +66,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 export const HomePage = (props: HomeProps) => (
   <OffCanvas>
     <Head>
-      <title>Homepage | Level Crush</title>
+      <title>Home | Level Crush</title>
     </Head>
     <SiteHeader />
     <Container minimalCSS={true} className="lg:px-4 mx-auto">
