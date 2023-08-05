@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Routes, RouteItem } from '../config/routes';
 import Hyperlink from './elements/hyperlink';
 import { H1 } from './elements/headings';
+import { twMerge } from 'tailwind-merge';
 
 export interface OffCanvasToggleProps {
   className?: string;
@@ -52,7 +53,7 @@ function dispatchEvent(event: keyof OffCanvasEvent) {
 
 export const OffCanvasToggle = (props: OffCanvasToggleProps) => (
   <button
-    className={'mr-0 ' + (props.className || '')}
+    className={twMerge('mr-0', props.className)}
     onClick={() => {
       dispatchEvent('offcanvas_request_toggle');
     }}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { H3 } from './elements/headings';
 import Button from './elements/button';
+import { twMerge } from 'tailwind-merge';
 
 export interface BlockListItem {
   text: string;
@@ -16,7 +17,7 @@ export interface BlockListProps {
 
 export const BlockList = (props: BlockListProps) => {
   return (
-    <div className={'flex flex-wrap ' + (props.className || '')}>
+    <div className={twMerge('flex flex-wrap', props.className)}>
       {props.items.map((item, itemIndex) => (
         <div
           title={item.caption}

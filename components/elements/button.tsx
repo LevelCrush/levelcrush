@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { twMerge } from 'tailwind-merge';
 
 /**
  * Controls the visual style of the button.
@@ -25,25 +26,24 @@ export const Button = (props: ButtonProps) => (
   <button
     {...props}
     type="button"
-    className={
+    className={twMerge(
       'block w-full px-4 py-2 rounded transition-all duration-300 ease-in-out ' +
-      (() => {
-        switch (props.intention) {
-          case 'normal':
-            return 'bg-blue-600 hover:bg-blue-900 text-white hover:cursor-pointer';
-          case 'attention':
-            return 'bg-yellow-400 hover:bg-yellow-600 text-black hover:cursor-pointer';
-          case 'danger':
-            return 'bg-red-700 hover:bg-red-900 text-white hover:cursor-pointer ';
-          case 'inactive':
-            return 'bg-gray-600 hover:bg-gray-600 text-gray-900 hover:cursor-default';
-          default:
-            return '';
-        }
-      })() +
-      ' ' +
-      (props.className || '')
-    }
+        (() => {
+          switch (props.intention) {
+            case 'normal':
+              return 'bg-blue-600 hover:bg-blue-900 text-white hover:cursor-pointer';
+            case 'attention':
+              return 'bg-yellow-400 hover:bg-yellow-600 text-black hover:cursor-pointer';
+            case 'danger':
+              return 'bg-red-700 hover:bg-red-900 text-white hover:cursor-pointer ';
+            case 'inactive':
+              return 'bg-gray-600 hover:bg-gray-600 text-gray-900 hover:cursor-default';
+            default:
+              return '';
+          }
+        })(),
+      props.className
+    )}
   >
     {props.children}
   </button>

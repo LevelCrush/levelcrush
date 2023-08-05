@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export interface HyperLinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -10,7 +11,7 @@ export interface HyperLinkProps
 export const Hyperlink = (props: HyperLinkProps) => (
   <Link
     {...props}
-    className={' hover:underline ' + (props.className || '')}
+    className={twMerge('hover:underline', props.className)}
     href={props.href}
     target={props.target || (props.href.includes('http') ? '_blank' : '_self')}
   >
