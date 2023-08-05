@@ -45,18 +45,14 @@ export const DiscordEventList = (props: DiscordEventListProps) => {
     props.events.forEach((event) => {
       if (event.scheduled_start_time) {
         const date = new Date(event.scheduled_start_time);
-        const year = date.getFullYear();
-        const month = date.getMonth() + 1;
-        const day = date.getDate();
 
-        const event_date =
-          month.toString().padStart(2, '0') +
-          '/' +
-          day.toString().padStart(2, '0') +
-          '/' +
-          year +
-          ' ' +
-          date.toLocaleTimeString();
+        let event_date =
+          date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+
+        // probably a better way to do this, but it works for now
+        // also probably only works for the en-us locale
+        event_date = event_date.replace(':00 PM', ' PM');
+        event_date = event_date.replace(':00 AM', ' AM');
         timeMap[event.id] = event_date;
       }
     });
