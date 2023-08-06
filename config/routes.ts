@@ -46,6 +46,24 @@ export const Routes = [
       },
     ],
   },
+  {
+    url: '#DiabloTools',
+    name: 'Diablo Tools',
+    children: [
+      {
+        url: 'https://d4builds.gg',
+        name: 'D4 Builds',
+      },
+      {
+        url: 'https://diablo4.life',
+        name: 'Diablo4 Life',
+      },
+      {
+        url: 'https://maxroll.gg/d4',
+        name: 'Maxroll GG',
+      },
+    ],
+  },
 ] as RouteItem[];
 
 export default Routes;
