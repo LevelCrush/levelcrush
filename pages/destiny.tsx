@@ -12,6 +12,7 @@ import SiteHeader from '../components/site_header';
 import DiscordConfig from '../config/discord';
 import { YouTubeConfig } from '../config/youtube';
 import Container from '../components/elements/container';
+import Hero from '../components/hero';
 
 interface DestinyProps {
   youtubeID: string;
@@ -27,13 +28,19 @@ export const getStaticProps: GetStaticProps<DestinyProps> = async () => {
   };
 };
 
-export const HomePage = () => (
+export const DestinyPage = (props: DestinyProps) => (
   <OffCanvas>
     <Head>
       <title>Destiny | Level Crush</title>
     </Head>
     <SiteHeader />
+    <main>
+      <Hero
+        className="min-h-[40rem] overflow-hidden top-0 relative"
+        youtubeID={props.youtubeID}
+      />
+    </main>
   </OffCanvas>
 );
 
-export default HomePage;
+export default DestinyPage;
