@@ -104,21 +104,25 @@ export const HomePage = (props: HomeProps) => (
                 text: 'Destiny 2',
                 caption: 'Destiny 2 Clans/Tools',
                 url_background: '/covers/destiny2.jpg',
+                url: '/destiny',
               },
               {
                 text: 'Diablo 4',
                 caption: 'Diablo 4 Clan/Tools',
                 url_background: '/covers/diablo.jpg',
+                url: '/diablo',
               },
               {
                 text: 'Minecraft',
                 caption: 'Minecraft Server Information',
                 url_background: '/covers/minecraft.jpg',
+                url: '/minecraft',
               },
               {
                 text: 'Satisfactory',
                 caption: 'Satisfactory Server Information',
                 url_background: '/covers/satisfactory.jpg',
+                url: '/satisfactory',
               },
             ]}
             id={'priorityBlockList'}
