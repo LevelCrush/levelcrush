@@ -72,15 +72,15 @@ export const HomePage = (props: HomeProps) => (
     <Container minimalCSS={true} className="lg:px-4 mx-auto">
       <div className="flex lg:min-h-screen flex-wrap relative top-0">
         {/* Left Column */}
-        <div className="relative top-0 flex-auto w-full lg:w-2/4 lg:min-h-screen items-center self-start overflow-hidden lg:max-w-[60rem] flex-wrap">
+        <div className="relative top-0 flex-auto w-full lg:w-1/3 lg:min-h-screen items-center self-start overflow-hidden lg:max-w-[60rem] flex-wrap">
           <DiscordEventList
-            className="px-4 flex-start self-start w-full relative top-0 left-0 mt-0"
+            className="px-4 flex-start self-start w-full relative top-0 left-0 mt-0 lg:max-w-[40rem]"
             events={props.events}
             id="discordEvents"
           />
         </div>
         {/* Right Column */}
-        <div className="flex-auto self-start w-full lg:w-2/4 lg:min-h-screen flex flex-col lg:sticky top-0">
+        <div className="flex-auto self-start w-full lg:w-1/3 lg:min-h-screen flex flex-col lg:sticky top-0">
           <iframe
             id="youtubePlayer"
             width="1920"
