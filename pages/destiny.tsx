@@ -42,7 +42,7 @@ export const DestinyPage = (props: DestinyProps) => (
       />
       <Container>
         <H2>Clans in our Network</H2>
-        <div className="flex flex-wrap gap-16 mt-8">
+        <div className="flex flex-wrap justify-between gap-16 mt-8">
           <ClanCard
             name="Level Crush"
             callsign="LC"
