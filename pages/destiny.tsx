@@ -13,6 +13,7 @@ import DiscordConfig from '../config/discord';
 import { YouTubeConfig } from '../config/youtube';
 import Container from '../components/elements/container';
 import Hero from '../components/hero';
+import { ClanCard } from '../components/clan_cards';
 
 interface DestinyProps {
   youtubeID: string;
@@ -39,6 +40,32 @@ export const DestinyPage = (props: DestinyProps) => (
         className="min-h-[40rem] overflow-hidden top-0 relative"
         youtubeID={props.youtubeID}
       />
+      <Container>
+        <H2>Clans in our Network</H2>
+        <div className="flex flex-wrap gap-16">
+          <ClanCard
+            name="Level Crush"
+            callsign="LC"
+            background_url="/clans/levelcrush_background.png"
+            flag_url="/clans/levelcrush_flag.png"
+            link_url="https://www.bungie.net/en/ClanV2?groupid=4356849"
+          />
+          <ClanCard
+            name={''}
+            callsign={''}
+            background_url={''}
+            flag_url={''}
+            link_url={''}
+          />
+          <ClanCard
+            name={''}
+            callsign={''}
+            background_url={''}
+            flag_url={''}
+            link_url={''}
+          />
+        </div>
+      </Container>
     </main>
   </OffCanvas>
 );
