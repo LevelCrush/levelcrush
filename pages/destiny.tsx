@@ -58,11 +58,11 @@ export const DestinyPage = (props: DestinyProps) => (
             link_url="https://www.bungie.net/en/ClanV2?groupid=4250497"
           />
           <ClanCard
-            name={''}
-            callsign={''}
-            background_url={''}
-            flag_url={''}
-            link_url={''}
+            name="Righteous Indiggnation"
+            callsign="+++"
+            background_url="/clans/righteousindiggnation_background.png"
+            flag_url="/clans/righteousindiggnation_flag.png"
+            link_url="https://www.bungie.net/en/ClanV2?groupid=5108335"
           />
         </div>
       </Container>
