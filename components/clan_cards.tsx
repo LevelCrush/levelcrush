@@ -13,7 +13,7 @@ export interface ClanCardProps {
 export const ClanCard = (props: ClanCardProps) => (
   <div
     className={twMerge(
-      'clan-card border-[rgba(0,0,0,0)]  bg-[rgba(0,0,0,0)] hover:bg-blue-700 border-solid border-[4px] rounded-t-md group cursor-pointer hover:border-blue-700 transition-all duration-300 ease-in-out',
+      'clan-card border-[rgba(0,0,0,0)]  bg-[rgba(0,0,0,0)] hover:bg-blue-700 border-solid border-[4px] rounded-b-md rounded-t-md group cursor-pointer hover:border-blue-700 transition-all duration-300 ease-in-out',
       props.className
     )}
   >
@@ -41,6 +41,13 @@ export const ClanCard = (props: ClanCardProps) => (
         src={props.flag_url}
         alt={`${props.flag_url} clan flag`}
       />
+    </a>
+    <a
+      className="rounded-b-md transition-all duration-300 ease-in-out block font-headline text-3xl tracking-widest text-center bg-black group-hover:bg-blue-700 py-2"
+      href={props.link_url}
+      target="_blank"
+    >
+      View More
     </a>
   </div>
 );
