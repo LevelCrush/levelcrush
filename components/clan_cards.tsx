@@ -25,7 +25,7 @@ export const ClanCard = (props: ClanCardProps) => (
     </a>
     <a
       className={
-        'block relative top-0 left-0 overflow-hidden max-w-[20rem] h-[30rem]  border-white border-opacity-20 border-solid border-[1px] border-t-0'
+        'block relative top-0 left-0 overflow-hidden max-w-[20rem] h-[30rem] '
       }
       href={props.link_url}
     >
