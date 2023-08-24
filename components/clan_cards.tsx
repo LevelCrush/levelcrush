@@ -11,13 +11,21 @@ export interface ClanCardProps {
 }
 
 export const ClanCard = (props: ClanCardProps) => (
-  <div className={twMerge('clan-card', props.className)}>
-    <h3 className="font-headline text-3xl tracking-widest text-center bg-black border-white border-opacity-20 border-solid border-[1px] py-2">
-      {props.name}
-    </h3>
+  <div
+    className={twMerge(
+      'clan-card border-white border-opacity-20 border-solid border-[1px] group cursor-pointer',
+      props.className
+    )}
+  >
+    <a
+      className="transition-all duration-300 ease-in-out block font-headline text-3xl tracking-widest text-center bg-black group-hover:bg-blue-700 border-white border-opacity-50 border-solid border-b-[1px] py-2"
+      href={props.link_url}
+    >
+      <h3>{props.name}</h3>
+    </a>
     <a
       className={
-        'block relative top-0 left-0 overflow-hidden max-w-[20rem] h-[30rem] group border-white border-opacity-20 border-solid border-[1px] border-t-0'
+        'block relative top-0 left-0 overflow-hidden max-w-[20rem] h-[30rem]  border-white border-opacity-20 border-solid border-[1px] border-t-0'
       }
       href={props.link_url}
     >
