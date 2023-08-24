@@ -20,8 +20,7 @@ interface DestinyProps {
 }
 
 export const getStaticProps: GetStaticProps<DestinyProps> = async () => {
-  const youtubeID = YouTubeConfig.playlistIDHome;
-
+  const youtubeID = YouTubeConfig.playlistIDDestiny;
   return {
     props: {
       youtubeID,
