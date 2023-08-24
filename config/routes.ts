@@ -17,6 +17,24 @@ export const Routes = [
     name: 'Discord Server',
   },
   {
+    url: '#DestinyClans',
+    name: 'Destiny Clans',
+    children: [
+      {
+        name: 'Level Crush',
+        url: 'https://www.bungie.net/en/ClanV2?groupid=4356849',
+      },
+      {
+        name: 'Level Stomp',
+        url: 'https://www.bungie.net/en/ClanV2?groupid=4250497',
+      },
+      {
+        name: 'Righteous Indiggnation',
+        url: 'https://www.bungie.net/en/ClanV2?groupid=5108335',
+      },
+    ],
+  },
+  {
     url: '#DestinyTools',
     name: 'Destiny Tools',
     children: [
