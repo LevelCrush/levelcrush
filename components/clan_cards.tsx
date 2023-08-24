@@ -20,6 +20,7 @@ export const ClanCard = (props: ClanCardProps) => (
     <a
       className="transition-all duration-300 ease-in-out block font-headline text-3xl tracking-widest text-center bg-black group-hover:bg-blue-700 border-white border-opacity-50 border-solid border-b-[1px] py-2"
       href={props.link_url}
+      target="_blank"
     >
       <h3>{props.name}</h3>
     </a>
@@ -28,6 +29,7 @@ export const ClanCard = (props: ClanCardProps) => (
         'block relative top-0 left-0 overflow-hidden max-w-[20rem] h-[30rem] '
       }
       href={props.link_url}
+      target="_blank"
     >
       <img
         className="object-cover object-center w-full h-full blur-sm  group-hover:blur-0 transition-all duration-300 ease-in-out"
