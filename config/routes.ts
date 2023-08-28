@@ -17,6 +17,24 @@ export const Routes = [
     name: 'Discord Server',
   },
   {
+    url: '#DestinyClans',
+    name: 'Destiny Clans',
+    children: [
+      {
+        name: 'Level Crush',
+        url: 'https://www.bungie.net/en/ClanV2?groupid=4356849',
+      },
+      {
+        name: 'Level Stomp',
+        url: 'https://www.bungie.net/en/ClanV2?groupid=4250497',
+      },
+      {
+        name: 'Righteous Indiggnation',
+        url: 'https://www.bungie.net/en/ClanV2?groupid=5108335',
+      },
+    ],
+  },
+  {
     url: '#DestinyTools',
     name: 'Destiny Tools',
     children: [
@@ -43,6 +61,24 @@ export const Routes = [
       {
         url: 'https://engram.blue/crafting',
         name: 'Engram.blue',
+      },
+    ],
+  },
+  {
+    url: '#DiabloTools',
+    name: 'Diablo Tools',
+    children: [
+      {
+        url: 'https://d4builds.gg',
+        name: 'D4 Builds',
+      },
+      {
+        url: 'https://diablo4.life',
+        name: 'Diablo4 Life',
+      },
+      {
+        url: 'https://maxroll.gg/d4',
+        name: 'Maxroll GG',
       },
     ],
   },
