@@ -1,18 +1,3 @@
-use std::collections::hash_map::Entry;
-use std::collections::HashMap;
-use std::collections::HashSet;
-
-use levelcrush::alias::destiny::InstanceId;
-use levelcrush::alias::destiny::MembershipId;
-use levelcrush::alias::UnixTimestamp;
-use levelcrush::bigdecimal::ToPrimitive;
-use levelcrush::cache::CacheDuration;
-use levelcrush::cache::CacheValue;
-use levelcrush::chrono::{self, Datelike, TimeZone};
-use levelcrush::tokio;
-use levelcrush::tracing;
-use levelcrush::util::unix_timestamp;
-
 use crate::app::responses::{MemberResponse, MemberTitle};
 use crate::app::state::CacheItem;
 use crate::bungie::enums::DestinyActivityModeType;
@@ -24,6 +9,19 @@ use crate::{
     app::{self, state::AppState},
     database,
 };
+use levelcrush::alias::destiny::InstanceId;
+use levelcrush::alias::destiny::MembershipId;
+use levelcrush::alias::UnixTimestamp;
+use levelcrush::bigdecimal::ToPrimitive;
+use levelcrush::cache::CacheDuration;
+use levelcrush::cache::CacheValue;
+use levelcrush::chrono::{self, Datelike, TimeZone};
+use levelcrush::tokio;
+use levelcrush::tracing;
+use levelcrush::util::unix_timestamp;
+use std::collections::hash_map::Entry;
+use std::collections::HashMap;
+use std::collections::HashSet;
 
 const CACHE_DURATION_REPORT: CacheDuration = CacheDuration::HalfDay;
 const VERSION_MEMBER_REPORT_CURRENT: i64 = 0;
